@@ -1,17 +1,7 @@
 version: '3'
 
 services:
-  kafka:
-    image: 'wurstmeister/kafka'
+  mq:
+    image: 'rabbitmq'
     ports:
-      - "9092"
-    links:
-      - zookeeper
-    environment:
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
-
-  zookeeper:
-    image: wurstmeister/zookeeper
-    ports:
-      - "2181:2181"
+      - "5672"
